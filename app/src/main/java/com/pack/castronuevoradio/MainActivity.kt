@@ -9,7 +9,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import com.pack.castronuevoradio.R // Import the R class for accessing resources
+import com.pack.castronuevoradio.R
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,7 +40,7 @@ class MainActivity : AppCompatActivity() {
                     InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_VARIATION_PASSWORD
                 showPasswordButton.text = "Show Password"
             }
-            // Move the cursor to the end of the text to maintain the current cursor position
+
             passwordEditText.setSelection(passwordEditText.text.length)
         }
         submitButton.setOnClickListener {
@@ -73,13 +73,13 @@ class MainActivity : AppCompatActivity() {
             }
 
             if (gender.isEmpty()) {
-                // Clear previous errors if any
+
                 maleRadioButton.error = null
                 femaleRadioButton.error = null
                 otherRadioButton.error = "Gender is required"
                 errorOccurred = true
             } else {
-                // Clear error for gender if gender is selected
+
                 maleRadioButton.error = null
                 femaleRadioButton.error = null
                 otherRadioButton.error = null
@@ -89,7 +89,7 @@ class MainActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            // If all fields are filled, proceed with intent
+
             val intent = Intent(this, SecondActivity::class.java)
             intent.putExtra("FULL_NAME", fullName)
             intent.putExtra("EMAIL", email)
